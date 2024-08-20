@@ -1,0 +1,26 @@
+extends layout
+block content
+    h1(style="text-align: center") Thông tin Giao dịch
+    div.transaction-info(style="text-align: center; font-size: 18px")
+      div
+          strong ID: 
+          span(style="font-weight: bold; color: red;") #{vnp_ResponseId}
+      div
+          strong Tin nhắn: 
+          span(style="font-weight: bold; color: red;") #{vnp_Message}
+      div
+          strong Code: 
+          span(style="font-weight: bold; color: red;") #{vnp_TmnCode}
+      div
+          strong Số tiền: 
+          span(style="font-weight: bold; color: red;") #{vnp_Amount}
+      div
+          strong Mã đơn hàng: 
+          span(style="font-weight: bold; color: red;") #{vnp_TxnRef}
+      div
+          strong Mã Ngân Hàng: 
+          span(style="font-weight: bold; color: red;") #{vnp_BankCode}
+      div
+          strong Thời gian: 
+          span(style="font-weight: bold; color: red;") #{vnp_PayDate}
+

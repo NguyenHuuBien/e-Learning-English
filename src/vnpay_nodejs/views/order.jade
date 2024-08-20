@@ -1,0 +1,30 @@
+// Created by CTT VNPAY
+
+extends layout
+
+block content
+    h3= title
+    div.table-responsive
+        form#createOrder(action=vnp_ReturnUrl, method='POST')
+            div.form-group
+                label Số tiền
+                input.form-control#amount(name='amount', placeholder='Số tiền', value=amount, readonly)
+
+            div.form-group
+                label Phương thức thanh toán
+                label.control-label
+                div.controls
+                    label.radio-inline
+                        input(type="radio", name="bankCode", id="vnbankPaymentMethod", value="VNBANK", checked="true")
+                        | Thanh toán qua ATM-Tài khoản ngân hàng nội địa
+
+            div.form-group
+                label Ngôn ngữ
+                label.control-label
+                div.controls
+                    label.radio-inline
+                        input(type="radio", name="language", id="vnLanguage", value="vn", checked="true")
+                        | Tiếng việt
+                
+            button.btn.btn-default#btnPopup(type='submit') Thanh toán
+        p&nbsp;

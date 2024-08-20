@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    if code == "00"
+        //- p(style="text-align: center") GD thành công
+        h1(style="text-align: center") Thông tin Giao dịch
+        div.transaction-info(style="text-align: center; font-size: 18px")
+            //- div
+            //-     strong ID: 
+            //-     | #{vnp_Params.vnp_ResponseId}
+            //- div
+            //-     strong Message: 
+            //-     | #{vnp_Params.vnp_Message}
+            div
+                strong Code: 
+                span(style="font-weight: bold; color: red;") #{vnp_Params.vnp_TmnCode}
+            div
+                strong Số tiền: 
+                span(style="font-weight: bold; color: red;") #{vnp_Params.vnp_Amount}
+            div
+                strong Mã đơn hàng: 
+                span(style="font-weight: bold; color: red;") #{vnp_Params.vnp_TxnRef}
+            div
+                strong Mã Ngân Hàng: 
+                span(style="font-weight: bold; color: red;") #{vnp_Params.vnp_BankCode}
+            div
+                strong Thời gian: 
+                span(style="font-weight: bold; color: red;") #{vnp_Params.vnp_PayDate}
+    else
+        p(style="text-align: center; color: red") GD thất bại
+    //- p(style="text-align: center")
+    //-     a.btn.btn-default(href='http://localhost:3000/dashboard') Về trang chủ

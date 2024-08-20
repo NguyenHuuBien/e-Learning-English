@@ -1,0 +1,15 @@
+//Created by CTT
+
+extends layout
+
+block content
+    h3=title
+    div.table-responsive
+        form(action='querydr', method='POST')
+            div.form-group
+                label Mã đơn hàng
+                input.form-control(name='orderId')
+            div.form-group
+                label Thời gian
+                input.form-control(name='transDate')
+            button.btn.btn-default(type='submit') Tìm kiếm
